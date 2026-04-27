@@ -1,0 +1,48 @@
+/* Oculta cursor del sistema en desktop */
+@media (pointer: fine) {
+  html, body, *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+/* Aura */
+.cursor-aura {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.cursor-aura.hovering {
+  border-color: rgba(0, 229, 255, 0.6);
+  background: rgba(0, 229, 255, 0.05);
+}
+
+.cursor-aura.hidden {
+  opacity: 0;
+}
+
+/* Punto */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  box-shadow: 0 0 8px var(--accent-glow);
+  transition: opacity 0.3s ease;
+}
+
+.cursor-dot.hidden {
+  opacity: 0;
+}
